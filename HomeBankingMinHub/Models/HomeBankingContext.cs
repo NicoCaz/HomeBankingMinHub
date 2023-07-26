@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HomeBankingMinHub.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace HomeBankingMindHub.Models
 
         //dbsets
         public DbSet<Client> Clients { get; set; }
+
+        public DbSet<Account> Account { get; set; }
+
+
     }
 }
 

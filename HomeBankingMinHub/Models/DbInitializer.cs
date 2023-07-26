@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using HomeBankingMinHub.Models;
 
 namespace HomeBankingMindHub.Models
 {
@@ -7,20 +8,22 @@ namespace HomeBankingMindHub.Models
     {
         public static void Initialize(HomeBankingContext context)
         {
-            if (!context.Clients.Any())
+            if (!context.Account.Any())
             {
-                var clients = new Client[]
+                var accountVictor = context.Clients.FirstOrDefault(c => c.Email == "vcoronado@gmail.com");
+                if (accountVictor != null)
                 {
-                    new Client { Email = "vcoronado@gmail.com", FirstName="Victor", LastName="Coronado", Password="123456"}
-                };
+                    var accounts = new Account[]
+                    {
+                        new Account {ClientId = accountVictor.Id, CreationDate = DateTime.Now, Number = string.Empty, Balance = 0 }
+                    };
+                    foreach (Account account in accounts)
+                    {
+                        context.Account.Add(account);
+                    }
+                    context.SaveChanges();
 
-                foreach (Client client in clients)
-                {
-                    context.Clients.Add(client);
                 }
-
-                //guardamos
-                context.SaveChanges();
             }
 
         }
