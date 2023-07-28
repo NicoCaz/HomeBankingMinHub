@@ -131,15 +131,10 @@ namespace HomeBankingMindHub.Controllers
                 var client = _clientRepository.FindById(id);
 
                 if (client == null)
-
                 {
-
                     return Forbid();
 
                 }
-
-
-
                 var clientDTO = new ClientDTO
 
                 {
@@ -181,10 +176,7 @@ namespace HomeBankingMindHub.Controllers
                 return StatusCode(500, ex.Message);
 
             }
-
         }
-
     }
-
 }
 

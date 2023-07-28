@@ -6,6 +6,8 @@ namespace HomeBankingMinHub.Models
     public class Account
 
     {
+        private static int InstanceCount = 0;
+
 
         public long Id { get; set; }
 
@@ -18,6 +20,16 @@ namespace HomeBankingMinHub.Models
         public Client Client { get; set; }
 
         public long ClientId { get; set; }
+
+        public Account()
+        {
+            InstanceCount++;
+        }
+
+        public static int TotalInstances
+        {
+            get { return InstanceCount; }
+        }
 
     }
 }

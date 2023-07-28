@@ -15,7 +15,7 @@ namespace HomeBankingMindHub.Models
                 {
                     var accounts = new Account[]
                     {
-                        new Account {ClientId = accountVictor.Id, CreationDate = DateTime.Now, Number = string.Empty, Balance = 0 }
+                        new Account {ClientId = accountVictor.Id, CreationDate = DateTime.Now, Number =Convert.ToString( Account.TotalInstances), Balance = 0 }
                     };
                     foreach (Account account in accounts)
                     {
