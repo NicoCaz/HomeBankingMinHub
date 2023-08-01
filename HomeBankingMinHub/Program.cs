@@ -31,9 +31,7 @@ namespace HomeBankingMindHub
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "Ha ocurrido un error al enviar la info a la base de datos");
                 }
-
             }
-
             host.Run();
         }
 

@@ -7,8 +7,7 @@ namespace HomeBankingMindHub.Models
     public class Client
 
     {
-
-
+        private static int InstanceCount = 0;
         public long Id { get; set; }
 
         public string FirstName { get; set; }
@@ -21,6 +20,15 @@ namespace HomeBankingMindHub.Models
 
         public ICollection<Account> Accounts { get; set; }
 
+        public Client()
+        {
+            InstanceCount++;
+        }
+
+        public static int TotalInstances
+        {
+            get { return InstanceCount; }
+        }
     }
 
 }
