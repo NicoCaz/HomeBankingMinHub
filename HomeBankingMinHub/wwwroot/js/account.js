@@ -2,7 +2,8 @@ var app = new Vue({
     el:"#app",
     data:{
         accountInfo: {},
-        error: null
+        error: null,
+      
     },
     methods:{
         getData: function(){
