@@ -9,9 +9,8 @@ const app = new Vue({
     },
     methods:{
         // load and display JSON sent by server for /clients
-        loadData: function () {
-            let id = new URLSearchParams(window.location.search).get("id");
-            axios.get("/api/clients" + id)
+        loadData: function() {
+            axios.get("/api/clients")
             .then(function (response) {
                 // handle success
                 app.outPut = response.data;

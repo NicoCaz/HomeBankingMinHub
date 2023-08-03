@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace HomeBankingMinHub.Models
+namespace HomeBankingMindHub.Models
 {
     public class Account{
         private static int InstanceCount = 0;
@@ -22,6 +22,7 @@ namespace HomeBankingMinHub.Models
         public Account()
         {
             InstanceCount++;
+            Number= Convert.ToString(InstanceCount);
         }
 
         public static int TotalInstances

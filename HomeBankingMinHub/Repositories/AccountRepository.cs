@@ -4,7 +4,6 @@ using System.Linq;
 using System;
 using HomeBankingMindHub.Models;
 using Microsoft.EntityFrameworkCore;
-using HomeBankingMinHub.Models;
 using System.Collections.Generic;
 
 namespace HomeBankingMindHub.Repositories

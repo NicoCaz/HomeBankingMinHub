@@ -1,4 +1,4 @@
-﻿using HomeBankingMinHub.Models;
+﻿using HomeBankingMindHub.Models;
 using System;
 
 namespace HomeBankingMindHub.Models

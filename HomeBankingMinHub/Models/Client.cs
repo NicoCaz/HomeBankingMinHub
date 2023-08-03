@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Security.Principal;
-using HomeBankingMinHub.Models;
+using HomeBankingMindHub.Models;
 
 namespace HomeBankingMindHub.Models
 {
@@ -19,6 +19,7 @@ namespace HomeBankingMindHub.Models
         public string Password { get; set; }
 
         public ICollection<Account> Accounts { get; set; }
+        public ICollection<ClientLoan> ClientLoans { get; set; }
 
         public Client()
         {
