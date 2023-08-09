@@ -26,9 +26,11 @@ namespace HomeBankingMindHub.Controllers
         private IAccountRepository _accountRepository;
         private IClientRepository _clientRepository;
 
-        public AccountsController(IAccountRepository accountRepository)
+        public AccountsController(IAccountRepository accountRepository, IClientRepository clientRepository)
         {
             _accountRepository = accountRepository;
+            _clientRepository = clientRepository;
+
         }
         [HttpGet]
         public IActionResult Get()

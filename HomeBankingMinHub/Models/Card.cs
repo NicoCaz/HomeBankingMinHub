@@ -15,5 +15,23 @@ namespace HomeBankingMindHub.Models
         public DateTime FromDate { get; set; }
         public DateTime ThruDate { get; set; }
         public long ClientId { get; set; }
+
+        public static string GenerateRandomCardNumber()
+        {
+            Random random = new Random();
+            string cardNumber = "";
+
+            for (int i = 0; i < 16; i++)
+            {
+                cardNumber += random.Next(0, 10);
+
+                if (i < 15 && (i + 1) % 4 == 0)
+                {
+                    cardNumber += "-";
+                }
+            }
+            return cardNumber;
+        }
     }
 }
+

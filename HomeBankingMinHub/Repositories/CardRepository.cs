@@ -5,46 +5,29 @@ using System.Linq;
 
 namespace HomeBankingMindHub.Repositories
 {
-    public class CardRepository : RepositoryBase<Client>, IClientRepository
+    public class CardRepository : RepositoryBase<Card>, ICardRepository
     {
-        public CardRepository(HomeBankingContext repositoryContext) : base(repositoryContext)
-        {
-        }
+        public CardRepository(HomeBankingContext repositoryContext) : base(repositoryContext) { }
 
-        public Client FindById(long id)
+        public IEnumerable<Card> GetAllCards()
         {
-            return FindByCondition(client => client.Id == id)
-                .Include(client => client.Accounts)
-                .Include(client => client.Cards)
-                .Include(client => client.ClientLoans)
-                    .ThenInclude(cl => cl.Loan)
-                .FirstOrDefault();
+            return FindAll().
+                ToList();
         }
-
-        public IEnumerable<Client> GetAllClients()
+        public IEnumerable<Card> GetCardsByClient(long clientId)
         {
-            return FindAll()
-                .Include(client => client.Accounts)
-                .Include(client => client.Cards)
-                .Include(client => client.ClientLoans)
-                    .ThenInclude(cl => cl.Loan)
+            return FindByCondition(card => card.ClientId == clientId)
                 .ToList();
         }
-
-        public void Save(Client client)
+        public void Save(Card card)
         {
-            Create(client);
+            Create(card);
             SaveChanges();
         }
-        public Client FindByEmail(string email)
+        public Card FindById(long id)
         {
-            return FindByCondition(client => client.Email.ToUpper() == email.ToUpper())
-            .Include(client => client.Accounts)
-            .Include(client => client.ClientLoans)
-                .ThenInclude(cl => cl.Loan)
-            .Include(client => client.Cards)
-            .FirstOrDefault();
+            return FindByCondition(card => card.Id == id).
+                FirstOrDefault();
         }
     }
 }
-
