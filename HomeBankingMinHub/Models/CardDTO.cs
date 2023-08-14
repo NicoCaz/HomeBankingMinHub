@@ -1,6 +1,7 @@
 ﻿using HomeBankingMindHub.Models;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace HomeBankingMindHub.Models
 {

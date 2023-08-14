@@ -7,21 +7,12 @@ using System;
 namespace HomeBankingMindHub.dtos
 
 {
-
-    public class AccountDTO
-
+    public class TransferDTO
     {
-
-        public long Id { get; set; }
-
-        public string Number { get; set; }
-
-        public DateTime CreationDate { get; set; }
-
-        public double Balance { get; set; }
-        public ICollection<TransactionDTO> Transactions { get; set; }
-
+        public string FromAccountNumber { get; set; }
+        public string ToAccountNumber { get; set; }
+        public double Amount { get; set; }
+        public string Description { get; set; }
     }
-
 }
 

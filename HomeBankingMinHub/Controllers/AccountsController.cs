@@ -109,14 +109,11 @@ namespace HomeBankingMindHub.Controllers
                 {
                     return Forbid();
                 }
-
                 Client client = _clientRepository.FindByEmail(email);
-
                 if (client == null)
                 {
                     return Forbid();
                 }
-
                 if (client.Accounts.Count() == 3)
                 {
                     return Forbid();
@@ -138,9 +135,7 @@ namespace HomeBankingMindHub.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
-
         }
-
         [HttpGet("clients/current/accounts")]
         public IActionResult GetAccounts()
         {

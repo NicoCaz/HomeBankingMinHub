@@ -27,6 +27,8 @@ namespace HomeBankingMindHub.Repositories
                 .Include(client => client.Accounts)
                 .Include(client => client.Cards)
                 .Include(client => client.ClientLoans)
+       
+
                     .ThenInclude(cl => cl.Loan)
                 .ToList();
         }
@@ -40,6 +42,7 @@ namespace HomeBankingMindHub.Repositories
         {
             return FindByCondition(client => client.Email.ToUpper() == email.ToUpper())
             .Include(client => client.Accounts)
+                .ThenInclude(cl => cl.Transactions)
             .Include(client => client.ClientLoans)
                 .ThenInclude(cl => cl.Loan)
             .Include(client => client.Cards)

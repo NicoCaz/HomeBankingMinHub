@@ -33,7 +33,7 @@ namespace HomeBankingMinHub
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<ICardRepository, CardRepository>();
-
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
             {
