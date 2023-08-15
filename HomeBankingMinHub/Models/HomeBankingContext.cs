@@ -1,5 +1,4 @@
 ﻿using HomeBankingMindHub.dtos;
-using HomeBankingMindHub.Models;
 using Microsoft.EntityFrameworkCore;
 namespace HomeBankingMindHub.Models
 {

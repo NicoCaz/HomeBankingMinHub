@@ -1,6 +1,4 @@
-﻿using HomeBankingMindHub.dtos;
-using HomeBankingMindHub.Models;
-using System;
+﻿using System;
 using System.Linq;
 
 namespace HomeBankingMindHub.Models
