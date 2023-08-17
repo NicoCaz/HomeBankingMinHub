@@ -8,9 +8,10 @@ using System.Collections.Generic;
 
 namespace HomeBankingMindHub.Repositories
 {
-    public class AccountRepository : RepositoryBase<Account>, IAccountRepository { 
+    public class AccountRepository : RepositoryBase<Account>, IAccountRepository
+    {
 
-         public AccountRepository(HomeBankingContext repositoryContext) : base(repositoryContext) { }
+        public AccountRepository(HomeBankingContext repositoryContext) : base(repositoryContext) { }
 
     public Account FindById(long id)
     {
@@ -32,7 +33,7 @@ namespace HomeBankingMindHub.Repositories
             .Include(account => account.Transactions)
             .ToList();
     }
-    public Account FinByNumber(string number)
+    public Account FindByNumber(string number)
     {
             return FindByCondition(account => account.Number.ToUpper() == number.ToUpper())
             .Include(account => account.Transactions)

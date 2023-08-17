@@ -3,7 +3,6 @@ var app = new Vue({
     data:{
         accountInfo: {},
         //error: null
-        port:location.port,
         errorToats: null,
         errorMsg: null,
     },
